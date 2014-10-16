@@ -1,0 +1,461 @@
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #fff;
+  margin: 0;
+  overflow-y: hidden;
+}
+a {
+  color: #fff;
+  cursor: pointer;
+}
+.social-links a {
+  background: url('../images/icons.png') no-repeat;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+.social-links a.FB-link {
+  background-position: 0 0;
+}
+.social-links a.TW-link {
+  background-position: -100px 0;
+}
+.asd-icon {
+  background: url('../images/icons.png') no-repeat;
+  width: 25px;
+  height: 25px;
+  display: block;
+}
+.asd-icon.asd-icon-search {
+  background-position: 0 0;
+}
+.asd-icon.asd-icon-info {
+  background-position: -25px 0;
+}
+.container {
+  width: 100%;
+}
+.section {
+  width: 100%;
+  min-height: 150px;
+}
+.section .content {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+}
+.section.section-top {
+  background: url('../images/bg_sky.png') center;
+  position: relative;
+  display: table;
+}
+.section.section-top .sky {
+  background: url('../images/big_bgs.png') center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  height: 100%;
+  z-index: 2;
+}
+.section.section-top .clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  height: 100%;
+  z-index: 3;
+}
+.section.section-top .clouds .cloud {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  background: url('../images/clouds.png') no-repeat;
+}
+.section.section-top .clouds .cloud.t1,
+.section.section-top .clouds .cloud.t3 {
+  background-position: 0 0;
+}
+.section.section-top .clouds .cloud.t2,
+.section.section-top .clouds .cloud.t4 {
+  background-position: -200px 0;
+}
+.section.section-top .clouds .cloud.t1 {
+  -webkit-animation: moveclouds 15s linear infinite;
+  -moz-animation: moveclouds 15s linear infinite;
+  -o-animation: moveclouds 15s linear infinite;
+  top: 0;
+}
+.section.section-top .clouds .cloud.t2 {
+  -webkit-animation: moveclouds 20s linear infinite;
+  -moz-animation: moveclouds 20s linear infinite;
+  -o-animation: moveclouds 20s linear infinite;
+  top: 20%;
+  -moz-transform: scale(0.8, 0.8);
+  -webkit-transform: scale(0.8, 0.8);
+  -o-transform: scale(0.8, 0.8);
+  -ms-transform: scale(0.8, 0.8);
+  transform: scale(0.8, 0.8);
+}
+.section.section-top .clouds .cloud.t3 {
+  -webkit-animation: moveclouds 25s linear infinite;
+  -moz-animation: moveclouds 25s linear infinite;
+  -o-animation: moveclouds 25s linear infinite;
+  top: 40%;
+  -moz-transform: scale(0.6, -0.6);
+  -webkit-transform: scale(0.6, -0.6);
+  -o-transform: scale(0.6, -0.6);
+  -ms-transform: scale(0.6, -0.6);
+  transform: scale(0.6, -0.6);
+}
+.section.section-top .clouds .cloud.t4 {
+  -webkit-animation: moveclouds 30s linear infinite;
+  -moz-animation: moveclouds 30s linear infinite;
+  -o-animation: moveclouds 30s linear infinite;
+  top: 50%;
+  -moz-transform: scale(0.4, -0.4);
+  -webkit-transform: scale(0.4, -0.4);
+  -o-transform: scale(0.4, -0.4);
+  -ms-transform: scale(0.4, -0.4);
+  transform: scale(0.4, -0.4);
+}
+.section.section-top .content {
+  position: relative;
+  min-height: 450px;
+}
+.section.section-top .content .logo {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+.section.section-top .content .logo img {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  display: block;
+}
+.section.section-top .content .grass {
+  position: absolute;
+  width: 100px;
+  height: 110px;
+  background: url('../images/clouds.png') no-repeat;
+  background-position: -400px 0;
+}
+.section.section-top .content .grass.t1 {
+  top: 40%;
+  right: 0;
+  -webkit-animation: floatingcloud 3s ease-in-out infinite;
+  -moz-animation: floatingcloud 3s ease-in-out infinite;
+  -o-animation: floatingcloud 3s ease-in-out infinite;
+}
+.section.section-top .content .grass.t2 {
+  top: 75%;
+  left: 0;
+  -webkit-animation: floatingcloud 3s ease-in-out infinite;
+  -moz-animation: floatingcloud 3s ease-in-out infinite;
+  -o-animation: floatingcloud 3s ease-in-out infinite;
+  -moz-transform: scale(0.7, 0.7);
+  -webkit-transform: scale(0.7, 0.7);
+  -o-transform: scale(0.7, 0.7);
+  -ms-transform: scale(0.7, 0.7);
+  transform: scale(0.7, 0.7);
+}
+.section.section-top .ground {
+  width: 100%;
+  height: 460px;
+  position: relative;
+  margin-top: -15%;
+}
+.section.section-top .ground .content {
+  height: auto;
+  height: 100%;
+  z-index: 6;
+  position: relative;
+}
+.section.section-top .ground .content .social-links {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+}
+.section.section-top .ground .content .arrow {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  display: block;
+  z-index: 101;
+  /*in front of logo*/
+}
+.section.section-top .ground .content .arrow a {
+  background: url('../images/icons.png') no-repeat;
+  background-position: -200px 0;
+  width: 120px;
+  height: 100px;
+  margin: 0 auto;
+  display: block;
+}
+.section.section-top .ground .content .sheep,
+.section.section-top .ground .content .sheep .eyes,
+.section.section-top .ground .content .sheep .gun,
+.section.section-top .ground .content .cow,
+.section.section-top .ground .content .cow .eyes {
+  position: absolute;
+  background: url('../images/animals.png') no-repeat;
+}
+.section.section-top .ground .content .sheep {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-position: 0 0;
+  width: 215px;
+  height: 150px;
+  z-index: 11;
+}
+.section.section-top .ground .content .sheep .eyes {
+  background-position: -285px -100px;
+  width: 40px;
+  height: 25px;
+  top: 53px;
+  left: 13px;
+  -webkit-animation: sheepblink 5s steps(1) infinite;
+  -moz-animation: sheepblink 5s steps(1) infinite;
+  -o-animation: sheepblink 5s steps(1) infinite;
+}
+.section.section-top .ground .content .sheep .gun {
+  background: url('../images/gun.png') no-repeat;
+  width: 120px;
+  height: 75px;
+  top: 35px;
+  right: 18px;
+  -webkit-animation: sheepgun 0.3s steps(4) infinite;
+  -moz-animation: sheepgun 0.3s steps(4) infinite;
+  -o-animation: sheepgun 0.3s steps(4) infinite;
+}
+.section.section-top .ground .content .cow {
+  position: absolute;
+  bottom: 15%;
+  left: 15%;
+  background-position: -215px 0;
+  width: 140px;
+  height: 90px;
+  z-index: 10;
+}
+.section.section-top .ground .content .cow .eyes {
+  background-position: -240px -100px;
+  width: 30px;
+  height: 20px;
+  top: 20px;
+  right: 13px;
+  -webkit-animation: cowblink 4.5s steps(1) infinite;
+  -moz-animation: cowblink 4.5s steps(1) infinite;
+  -o-animation: cowblink 4.5s steps(1) infinite;
+}
+.section.section-top .ground div.bg {
+  background: url('../images/big_bgs_floor.png') repeat-x center;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  height: 100%;
+  z-index: 5;
+}
+.section.section-media {
+  background: #695f4f;
+  padding: 20px 0 0 0;
+  margin: 0;
+  min-height: 600px;
+}
+.section.section-media .content {
+  position: relative;
+  display: table;
+  padding-bottom: 40px;
+}
+/************** ANIMATE CSS - ADDONS ******************/
+@-webkit-keyframes tada2 {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.98, 0.98, 0.98) rotate3d(0, 0, 1, -1deg);
+    transform: scale3d(0.98, 0.98, 0.98) rotate3d(0, 0, 1, -1deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.01, 1.01, 1.01) rotate3d(0, 0, 1, 1deg);
+    transform: scale3d(1.01, 1.01, 1.01) rotate3d(0, 0, 1, 1deg);
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.01, 1.01, 1.01) rotate3d(0, 0, 1, -1deg);
+    transform: scale3d(1.01, 1.01, 1.01) rotate3d(0, 0, 1, -1deg);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes tada2 {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.98, 0.98, 0.98) rotate3d(0, 0, 1, -1deg);
+    transform: scale3d(0.98, 0.98, 0.98) rotate3d(0, 0, 1, -1deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.01, 1.01, 1.01) rotate3d(0, 0, 1, 1deg);
+    transform: scale3d(1.01, 1.01, 1.01) rotate3d(0, 0, 1, 1deg);
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.01, 1.01, 1.01) rotate3d(0, 0, 1, -1deg);
+    transform: scale3d(1.01, 1.01, 1.01) rotate3d(0, 0, 1, -1deg);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.tada2 {
+  -webkit-animation-name: tada2;
+  animation-name: tada2;
+}
+/**** Clouds Animations ****/
+@-webkit-keyframes moveclouds {
+  0% {
+    left: -20%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@-moz-keyframes moveclouds {
+  0% {
+    left: -20%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@-o-keyframes moveclouds {
+  0% {
+    left: -20%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@-webkit-keyframes floatingcloud {
+  0% {
+    margin-top: 0px;
+  }
+  50% {
+    margin-top: 20px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+@-moz-keyframes floatingcloud {
+  0% {
+    margin-top: 0px;
+  }
+  50% {
+    margin-top: 20px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+@-o-keyframes floatingcloud {
+  0% {
+    margin-top: 0px;
+  }
+  50% {
+    margin-top: 20px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+@-webkit-keyframes sheepblink {
+  0% {
+    background-position: -285px -125px;
+  }
+  2% {
+    background-position: -285px -100px;
+  }
+}
+@-moz-keyframes sheepblink {
+  0% {
+    background-position: -285px -125px;
+  }
+  2% {
+    background-position: -285px -100px;
+  }
+}
+@-o-keyframes sheepblink {
+  0% {
+    background-position: -285px -125px;
+  }
+  2% {
+    background-position: -285px -100px;
+  }
+}
+@-webkit-keyframes cowblink {
+  0% {
+    background-position: -240px -120px;
+  }
+  2% {
+    background-position: -240px -100px;
+  }
+}
+@-moz-keyframes cowblink {
+  0% {
+    background-position: -240px -120px;
+  }
+  2% {
+    background-position: -240px -100px;
+  }
+}
+@-o-keyframes cowblink {
+  0% {
+    background-position: -240px -120px;
+  }
+  2% {
+    background-position: -240px -100px;
+  }
+}
+@-webkit-keyframes sheepgun {
+  100% {
+    background-position: -480px;
+  }
+}
+@-moz-keyframes sheepgun {
+  100% {
+    background-position: -480px;
+  }
+}
+@-o-keyframes sheepgun {
+  100% {
+    background-position: -480px;
+  }
+}

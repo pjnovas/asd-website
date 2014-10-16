@@ -1,0 +1,9 @@
+node_modules
+.DS_Store
+.sublime-project
+.sublime-workspace
+app.config.prod.json
+dump.rdb
+public/css/vendor.css
+public/css/app.css
+public/js/**/*
