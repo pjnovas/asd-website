@@ -1,15 +1,50 @@
 
 @sec1BG: #669dbd;
 @sec2BG: #695f4f;
-@sec3BG: #2f5a73;
-@sec4BG: #2b4353;
+@sec3BG: #d59735;
+@sec4BG: #3b3b3b;
+
+@font-face {
+    font-family: 'sf_wonder_comicregular';
+    src: url('../fonts/sf_wonder_comic-webfont.eot');
+    src: url('../fonts/sf_wonder_comic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sf_wonder_comic-webfont.woff2') format('woff2'),
+         url('../fonts/sf_wonder_comic-webfont.woff') format('woff'),
+         url('../fonts/sf_wonder_comic-webfont.ttf') format('truetype'),
+         url('../fonts/sf_wonder_comic-webfont.svg#sf_wonder_comicregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.scale-transform(@x: 1; @y: 1) {
+  -webkit-transform: scale(@x, @y);
+  -moz-transform: scale(@x, @y);
+  -o-transform: scale(@x, @y);
+  -ms-transform: scale(@x, @y);
+  transform: scale(@x, @y);
+}
+
+.origin-transform(@x: center; @y: center){
+  -webkit-transform-origin: @x @y;
+      -ms-transform-origin: @x @y;
+          transform-origin: @x @y;
+}
+
+.animation(@name; @time; @ease; @infinite){
+  -webkit-animation: @name @time @ease @infinite;
+  -moz-animation: @name @time @ease @infinite;
+  -o-animation: @name @time @ease @infinite;
+  -ms-animation: @name @time @ease @infinite;
+  animation: @name @time @ease @infinite;
+}
 
 html, body {
   overflow-x:hidden;
 }
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "sf_wonder_comicregular", Helvetica, Arial, sans-serif;
   color: #fff;
   margin: 0;
   overflow-y:hidden;
@@ -35,22 +70,6 @@ a {
     &.TW-link {
       background-position: -100px 0;
     }
-  }
-
-}
-
-.asd-icon {
-  background: url('../images/icons.png') no-repeat;
-  width: 25px;
-  height: 25px;
-  display: block;
-
-  &.asd-icon-search {
-    background-position: 0 0;
-  }
-
-  &.asd-icon-info {
-    background-position: -25px 0;
   }
 
 }
@@ -110,49 +129,29 @@ a {
         }
 
         &.t1 {
-          -webkit-animation: moveclouds 15s linear infinite;
-          -moz-animation: moveclouds 15s linear infinite;
-          -o-animation: moveclouds 15s linear infinite;
+          .animation(moveclouds; 15s; linear; infinite);
           top: 0;
         }
 
         &.t2 {
-          -webkit-animation: moveclouds 20s linear infinite;
-          -moz-animation: moveclouds 20s linear infinite;
-          -o-animation: moveclouds 20s linear infinite;
+          .animation(moveclouds; 20s; linear; infinite);
           top: 20%;
 
-          -moz-transform: scale(0.8, 0.8);
-          -webkit-transform: scale(0.8, 0.8);
-          -o-transform: scale(0.8, 0.8);
-          -ms-transform: scale(0.8, 0.8);
-          transform: scale(0.8, 0.8);
+          .scale-transform(0.8, 0.8);
         }
 
         &.t3 {
-          -webkit-animation: moveclouds 25s linear infinite;
-          -moz-animation: moveclouds 25s linear infinite;
-          -o-animation: moveclouds 25s linear infinite;
+          .animation(moveclouds; 25s; linear; infinite);
           top: 40%;
 
-          -moz-transform: scale(0.6, -0.6);
-          -webkit-transform: scale(0.6, -0.6);
-          -o-transform: scale(0.6, -0.6);
-          -ms-transform: scale(0.6, -0.6);
-          transform: scale(0.6, -0.6);
+          .scale-transform(0.6, -0.6);
         }
 
         &.t4 {
-          -webkit-animation: moveclouds 30s linear infinite;
-          -moz-animation: moveclouds 30s linear infinite;
-          -o-animation: moveclouds 30s linear infinite;
+          .animation(moveclouds; 30s; linear; infinite);
           top: 50%;
 
-          -moz-transform: scale(0.4, -0.4);
-          -webkit-transform: scale(0.4, -0.4);
-          -o-transform: scale(0.4, -0.4);
-          -ms-transform: scale(0.4, -0.4);
-          transform: scale(0.4, -0.4);
+          .scale-transform(0.4, -0.4);
         }
       }
     }
@@ -185,24 +184,15 @@ a {
           top: 40%;
           right: 0;
 
-          -webkit-animation: floatingcloud 3s ease-in-out infinite;
-          -moz-animation: floatingcloud 3s ease-in-out infinite;
-          -o-animation: floatingcloud 3s ease-in-out infinite;
+          .animation(floatingcloud; 3s; ease-in-out; infinite);
         }
 
         &.t2 {
           top: 75%;
           left: 0;
 
-          -webkit-animation: floatingcloud 3s ease-in-out infinite;
-          -moz-animation: floatingcloud 3s ease-in-out infinite;
-          -o-animation: floatingcloud 3s ease-in-out infinite;
-
-          -moz-transform: scale(0.7, 0.7);
-          -webkit-transform: scale(0.7, 0.7);
-          -o-transform: scale(0.7, 0.7);
-          -ms-transform: scale(0.7, 0.7);
-          transform: scale(0.7, 0.7);
+          .animation(floatingcloud; 3s; ease-in-out; infinite);
+          .scale-transform(0.7, 0.7);
         }
       }     
     }
@@ -223,7 +213,7 @@ a {
           position: absolute;
           bottom: 0;
           left: 0;
-          z-index: 15;
+          z-index: 150;
         }
 
         .arrow {
@@ -267,9 +257,7 @@ a {
             top: 53px;
             left: 13px;
 
-            -webkit-animation: sheepblink 5s steps(1) infinite;
-            -moz-animation: sheepblink 5s steps(1) infinite;
-            -o-animation: sheepblink 5s steps(1) infinite;
+            .animation(sheepblink; 5s; steps(1); infinite);
           }
 
           .gun {
@@ -280,9 +268,7 @@ a {
             top: 35px;
             right: 18px;
 
-            -webkit-animation: sheepgun 0.3s steps(4) infinite;
-            -moz-animation: sheepgun 0.3s steps(4) infinite;
-            -o-animation: sheepgun 0.3s steps(4) infinite;
+            .animation(sheepgun; 0.5s; steps(4); infinite);
           }
         }
 
@@ -303,12 +289,18 @@ a {
             top: 20px;
             right: 13px;
 
-            -webkit-animation: cowblink 4.5s steps(1) infinite;
-            -moz-animation: cowblink 4.5s steps(1) infinite;
-            -o-animation: cowblink 4.5s steps(1) infinite;
+            .animation(cowblink; 4.5s; steps(1); infinite);
           }
         }
         
+        .social-links,
+        .cow {
+          .origin-transform(left; bottom);
+        }
+
+        .sheep {
+          .origin-transform(right; bottom);
+        }
       }
 
       div.bg {
@@ -328,26 +320,144 @@ a {
     background: @sec2BG;
     padding: 20px 0 0 0;
     margin: 0;
-    min-height: 600px;
+    /*min-height: 600px;*/
 
     .content {
       position: relative;
       display: table;
       padding-bottom: 40px;
 
+      iframe {
+        width: 100%;
+        max-width: 560px;
+        margin: 0 auto;
+        display: block;
+        padding-top: 50px;
+      }
     }
   }
 
   &.section-links {
-    
-  }
-
-  &.section-footer {
+    background: @sec3BG url('../images/getitnow_bg.png') no-repeat;
+    background-position: top center;
+    background-size: 100%;
+    border-top: solid 10px #fff;
+    min-height: 600px;
 
     .content {
+      position: relative;
+      display: table;
+      
+      h2 {
+        position: absolute;
+        font-size: 100px;
+        margin: 0;
+
+        &.front {
+          color: #fff;
+          left: 0;
+          top: 0;
+          z-index: 2;
+        }
+
+        &.back {
+          left: 5px;
+          top: 5px;
+          color: #000;
+          z-index: 1;
+        }
+      }
 
     }
   }
+
+  &.section-footer {
+    background: @sec4BG;
+    border-top: solid 10px #5d5d5d;
+
+    .content {
+      display: table;
+      padding-top: 30px;
+
+      .press-kit{
+        float: left;
+        text-align: center;
+        font-size: 40px;
+        width: 250px;
+
+        h3 {
+          margin-top: 20px;
+          margin-bottom: 0;
+        }
+      }
+
+      .psychonull-logo {
+        float: left;
+        width: 450px;
+        height: 100px;
+
+        div {
+          margin: 0;
+          background: url('../images/icons.png') no-repeat;
+          background-position: -320px 0;
+              
+          width: 350px;
+          height: 100px;
+          margin: 0 auto;
+          display: block;
+        }
+      }
+
+      .social {
+        width: 100%;
+        float: right;
+        max-width: 210px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 950px), only screen and (max-device-width: 950px) {
+
+  .section {
+
+    &.section-links {
+      background-size: 120%;
+      min-height: 400px;
+
+      .content {
+        h2 {
+          font-size: 80px;
+        }
+      }
+    }
+
+    &.section-footer {
+      
+      .content {
+        padding-top: 10px;
+
+        .press-kit {
+          width: 100%;
+          float: inherit;
+        }
+
+        .psychonull-logo {
+          width: 100%;
+          float: inherit; 
+        }
+
+        .social {
+          width: 100%;
+          float: inherit;  
+        }
+        
+      }
+    }
+  }
+
 }
 
 @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
@@ -357,7 +467,37 @@ a {
     &.section-top {
       .content {
 
+        .grass {
+         
+          &.t1 {
+            top: 30%;
+          }
+
+          &.t2 {
+            top: 65%;
+          }
+        }
+
+
       }
+
+      .ground {
+        margin-top: -30%;
+      
+        .content{
+          
+          .social-links,
+          .arrow,
+          .sheep,
+          .cow {
+            .scale-transform(0.7, 0.7);
+          }
+
+        }
+        
+      }
+
+
     }
 
     &.section-media {
@@ -368,18 +508,22 @@ a {
     }
 
     &.section-links {
+      background-size: 150%;
 
       .content {
-
+        h2 {
+          font-size: 60px;
+        }
       }
     }
-
+/*
     &.section-footer {
       
       .content {
       
       }
     }
+*/
   }
 
 }
@@ -391,27 +535,82 @@ a {
     &.section-top {
       .content {
 
+        .grass {
+         
+          &.t1 {
+            display: none;
+          }
+
+          &.t2 {
+            top: 40%;
+            left: 5%;
+          }
+        }
+      }
+
+      .ground {
+        margin-top: -70%;
+
+        .content{
+          .arrow,
+          .sheep,
+          .social-links,
+          .cow {
+            .scale-transform(0.5, 0.5);
+          }
+
+        }
+        
       }
     }
 
     &.section-media {
-
       .content {
 
       }
     }
 
     &.section-links {
+      background-size: 150%;
 
       .content {
+        h2 {
+          font-size: 50px;
+        }
 
+      }
+    }
+/*
+    &.section-footer {
+      
+      .content {
+        
+      }
+    }
+*/
+  }
+}
+
+@media only screen and (max-width: 350px), only screen and (max-device-width: 350px) {
+
+   .section {
+
+    &.section-top {
+
+      .ground {
+        margin-top: -150%;
       }
     }
 
     &.section-footer {
       
       .content {
-      
+
+        .psychonull-logo {
+          max-width: 300px;
+          .scale-transform(0.85, 0.85);
+          .origin-transform(left, center);
+        }
       }
     }
   }
@@ -491,7 +690,7 @@ a {
   100% {left: 100%;}
 }
 
-@-o-keyframes moveclouds {
+@keyframes moveclouds {
   0% {left: -20%;}
   100% {left: 100%;}
 }
@@ -508,7 +707,7 @@ a {
   100% {margin-top: 0px;}
 }
 
-@-o-keyframes floatingcloud {
+@keyframes floatingcloud {
   0% {margin-top: 0px;}
   50% {margin-top: 20px;}
   100% {margin-top: 0px;}
@@ -524,7 +723,7 @@ a {
   2% { background-position: -285px -100px; }
 }
 
-@-o-keyframes sheepblink {
+@keyframes sheepblink {
   0% { background-position: -285px -125px; }
   2% { background-position: -285px -100px; }
 }
@@ -539,7 +738,7 @@ a {
   2% { background-position: -240px -100px; }
 }
 
-@-o-keyframes cowblink {
+@keyframes cowblink {
   0% { background-position: -240px -120px; }
   2% { background-position: -240px -100px; }
 }
@@ -552,6 +751,6 @@ a {
   100% { background-position: -480px; }
 }
 
-@-o-keyframes sheepgun {
+@keyframes sheepgun {
   100% { background-position: -480px; }
 }
