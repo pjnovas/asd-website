@@ -53,7 +53,7 @@ module.exports = function(grunt) {
           yuicompress: true
         },
         files: {
-          "<%= paths.dist %>css/app.css": [ "<%= paths.app.less %>app.less" ]
+          "<%= paths.dist.exportCSS %><%= paths.dist.appCSSName %>": [ "<%= paths.app.less %>app.less" ]
         }
       }
 
@@ -80,10 +80,7 @@ module.exports = function(grunt) {
         options: {
           separator: ';',
         },
-        src: [
-            '<%= paths.vendor.js %>jquery.min.js'
-          , '<%= paths.vendor.js %>**/*.js'
-         ],
+        src: ['<%= paths.vendor.js %>**/*.js'],
         dest: '<%= paths.dist.root %><%= paths.dist.vendorName %>'
       },
       app: {
@@ -118,18 +115,34 @@ module.exports = function(grunt) {
       }
     },
 
+    cssmin: {
+      all: {
+        files: {
+          "<%= paths.dist.exportCSS %><%= paths.dist.appCSSName %>": 
+            ["<%= paths.dist.exportCSS %><%= paths.dist.appCSSName %>"],
+          "<%= paths.dist.exportCSS %><%= paths.dist.vendorCSSName %>": 
+            ["<%= paths.dist.exportCSS %><%= paths.dist.vendorCSSName %>"],
+        }
+      }
+    },
+
     copy: {
       dist: {
         cwd: "./", 
         files: {
-          "<%= paths.dist.exportCSS %><%= paths.dist.vendorCSSName %>": 
-            "<%= paths.dist.root %><%= paths.dist.vendorCSSName %>",
-
           "<%= paths.dist.exportJS %><%= paths.dist.vendorName %>": 
             "<%= paths.dist.root %><%= paths.dist.vendorName %>",
 
           "<%= paths.dist.exportJS %><%= paths.dist.appName %>": 
             "<%= paths.dist.root %><%= paths.dist.appName %>"
+        }
+      },
+
+      vendorcss: {
+        cwd: "./", 
+        files: {
+          "<%= paths.dist.exportCSS %><%= paths.dist.vendorCSSName %>": 
+            "<%= paths.dist.root %><%= paths.dist.vendorCSSName %>"
         }
       }
 
@@ -196,6 +209,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   var preBuild = [
     "clean:before", 
@@ -205,11 +219,11 @@ module.exports = function(grunt) {
   ];
 
   var postBuild = [
-    "copy"
+    "copy:dist"
   ];
 
-  grunt.registerTask("default", preBuild.concat(["less:dev"]).concat(postBuild));
-  grunt.registerTask("prod", preBuild.concat(["less:prod", "uglify"], postBuild));
+  grunt.registerTask("default", preBuild.concat(["less:dev", "copy:vendorcss"]).concat(postBuild));
+  grunt.registerTask("prod", preBuild.concat(["less:prod", "cssmin", "uglify"]).concat(postBuild));
   grunt.registerTask("w", ["default", "watch:local"]);
 
 };

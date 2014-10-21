@@ -39,6 +39,11 @@
   animation: @name @time @ease @infinite;
 }
 
+.rotate3d(@angle) {
+  -webkit-transform: rotate3d(0, 0, 1, @angle);
+          transform: rotate3d(0, 0, 1, @angle);
+}
+
 html, body {
   overflow-x:hidden;
 }
@@ -342,11 +347,12 @@ a {
     background-position: top center;
     background-size: 100%;
     border-top: solid 10px #fff;
-    min-height: 600px;
+    min-height: 500px;
 
     .content {
       position: relative;
       display: table;
+      min-height: 450px;
       
       h2 {
         position: absolute;
@@ -365,6 +371,71 @@ a {
           top: 5px;
           color: #000;
           z-index: 1;
+        }
+      }
+
+      .more-platforms {
+
+        h3 {
+          position: absolute;
+          font-size: 40px;
+          margin: 0;
+          max-width: 400px;
+
+          &.front {
+            color: #fff;
+            left: 0;
+            bottom: 0;
+            z-index: 2;
+          }
+
+          &.back {
+            left: 3px;
+            bottom: -3px;
+            color: #000;
+            z-index: 1;
+          }
+
+          &.back2 {
+            left: -3px;
+            bottom: 3px;
+            color: #000;
+            z-index: 1;
+          }
+        }
+
+      }
+
+      .google-play {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        a {
+          text-decoration: none;
+          margin-right: 20px;
+          display: inline-block;
+
+          &.free {
+            position: relative;
+
+            span {
+              position: absolute;
+              top: -18px;
+              right: -25px;
+              font-size: 28px;
+              z-index: 2;
+              color: rgb(114, 244, 114);
+              .rotate3d(8deg);
+
+              &.bg {
+                color: #000;
+                z-index: 1;
+                top: -16px;
+                right: -23px;
+              }
+            }
+          }
         }
       }
 
@@ -431,6 +502,21 @@ a {
         h2 {
           font-size: 80px;
         }
+
+        .more-platforms {
+          width: 100%; 
+
+          h3 {
+            width: 100%; 
+            max-width: 100%;
+            text-align: center;
+          }
+        }
+
+        .google-play {
+          bottom: 100px;
+        }
+
       }
     }
 
@@ -576,6 +662,22 @@ a {
       .content {
         h2 {
           font-size: 50px;
+        }
+
+        .google-play {
+          width: 100%;
+
+          a {
+            display: block;
+            margin: 30px auto;
+            width: 180px;
+
+            img {
+              margin: 0 auto;
+              display: block;
+              width: 172px;
+            }
+          }
         }
 
       }
