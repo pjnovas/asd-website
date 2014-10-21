@@ -177,16 +177,10 @@ module.exports = function(grunt) {
             window: true
             ,jQuery: true
             ,$: true
-            ,_: true
             ,require: true
             ,module: true
-            ,Backbone: true
-            ,Handlebars: true
             ,console: true
-            ,moment: true
-            ,Printer: true
-            ,literalNumbers: true
-            ,cityagro: true
+            ,smoothScroll: true
           }
         }
       }

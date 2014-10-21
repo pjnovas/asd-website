@@ -6,4 +6,9 @@ module.exports = function(){
   // Init Helpers
   window.asd.settings = require('./settings');
 
+  smoothScroll.init({
+    speed: 1000,
+    easing: 'easeInOut'
+  });
+  
 };
